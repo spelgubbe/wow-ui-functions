@@ -8,7 +8,7 @@ SHOW_FUNCTION_MESSAGES = true
 
 function loadUserProfile()
 	classColorHealthBars()
-	classPortraits()
+	classIconPortraits()
 	resizeArenaFrames(1.5)
 	resizeArenaPetFrames(1.5)
 	moveArenaFrames("topright", -335, -25)

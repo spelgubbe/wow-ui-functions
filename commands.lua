@@ -1,47 +1,36 @@
-SLASH_COMMAND1 = '/jv'
-local funcs = {
-	"resize arena frames",
-	"resize arena pet frames",
-	"move arena frames",
-	"remove action bar textures",
-	"clean HUD |cff00ccff(no background on game menu)",
-	"remove XP bar",
-	"hide actionbar binds",
-	"class icon as portrait",
-	"removes the gryphons",
-	"resize spell castbars |cff00ccff(self, focus, target)",
-	"removes action bar number |cff00ccff(and the up and down arrows)",
-	"snowfall keypress"
+SLASH_COMMAND1 = '/uf'
+local functions = {
+	"resizeArenaFrames(scale)",
+	"resizeArenaPetFrames(scale)",
+	"resizeSpellBars(player, focus, target)",
+	"moveArenaFrames(position, offsetx, offsety)",
+	"showActionBarTextures(true/false)",
+	"showMenuBarTextures(true/false)",
+	"showMaxLevelBar(true/false)",
+	"showXPBar(true/false)",
+	"showBinds(true/false)",
+	"hideMacroText()",
+	"showGryphons(true/false)",
+	"showActionBarNumber(true/false)",
+	"classIconPortraits()",
+	"classColorHealthBars()",
+	"classColorNameBackground()",
+	"arenaTrinketFrames()",
+	"normalizeBarsWhileCC()",
+	"fixFollowingNameplates()",
+	"snowfall()"
 }
-local commands = {
-	"afscale <scale>",
-	"afpetscale <scale>",
-	"moveaf <position> <x-offset> <y-offset> (move arena frame)",
-	"abartextures (run to show/hide action bar textures)",
-	"xpbar (run to show/hide xpbar)",
-	"gryphons (run to show/hide gryphons)",
-	"castbarscales <castbarScale> <focusCastScale> <targetCastScale> (change the scale of cast bars)",
-	"actionbarnumber (run to show/hide the action bar number and the up and down arrows)"
-
-}
-
-
 local function handler(msg, editbox)
 	local command, rest = msg:match("^(%S*)%s*(.-)$")
-	if command=="info" then
-		for i in pairs(funcs) do
-			print("|cff00ccff"..i..". "..funcs[i])
+	if command=="help" then
+		print("Write /uf functions to see available functions")
+	elseif command=="functions" then
+		print("Functions: (run from macro/chatbox by /run functionName())")
+		for i in pairs(functions) do
+			print("|cff00ccff"..i..". "..functions[i])
 		end
-	elseif command=="help" then
-		print("Write /uf commands to see available commands")
-	elseif command=="commands" then
-		print("Commands: (type /uf before them) NOT AVAILABLE YET")
-		for i in pairs(commands) do
-			print("|cff00ccff"..i..". "..funcs[i])
-		end
-	elseif command=="toggle" then
-		--print(rest)
-		disableScript(rest)
+	else
+		print("Write /uf functions to see available functions")
 	end
 
 end

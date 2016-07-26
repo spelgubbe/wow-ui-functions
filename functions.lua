@@ -79,7 +79,7 @@ function showXPBar(bool) -- doesn't seem to work
 	end
 end
 
-function classPortraits()
+function classIconPortraits()
 	UFP = "UnitFramePortrait_Update"
 	--UICC = "Interface\\Glues\\CharacterCreate\\UI-CharacterCreate-Classes"
 	UICC = "Interface\\TargetingFrame\\UI-Classes-Circles"
@@ -100,7 +100,7 @@ function classPortraits()
 		end
 	end)
 end
-function arenaTrinketFrames() -- might be coming in le future Xd
+function arenaTrinketFrames()
 	trinkets = {}
 	local arenaFrame, trinket
 	for i = 1, 5 do
