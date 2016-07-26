@@ -165,7 +165,7 @@ function hideMacroText()
 			name:Hide()
 		end
 	end)
-	functionPrint("Hiding macro names (requires /reload to revert)")
+	functionPrint("Hiding macro names (requires /reload to revert unless in userProfile)")
 end
 
 function showGryphons(bool)
@@ -195,7 +195,7 @@ function normalizeBarsWhileCC() -- no red bars while in CC
 			--self:SetDrawBling(true)
 		end
 	end)
-	functionPrint("Loss of control cooldown disabled (requires /reload to revert)")
+	functionPrint("Loss of control cooldown disabled (requires /reload to revert unless in userProfile)")
 end
 
 function showActionBarNumber(bool)
@@ -359,4 +359,4 @@ function loadRequiredScripts()
 	LoadAddOn("Blizzard_ArenaUI")
 end
 loadRequiredScripts()
-functionPrint("thangs are working if you see this =]\nWrite /uf to see functions included in this addon")
+functionPrint("thangs are working if you see this =]")
