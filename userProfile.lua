@@ -7,6 +7,12 @@
 SHOW_FUNCTION_MESSAGES = true
 
 function loadUserProfile()
+	--setDamageFont("Interface\\AddOns\\ui-functions\\Fonts\\customFont.ttf")
+	--setNameplateFont("directory") -- search for blizzard fonts unless you got custom ones
+	--setNameFont("directory")
+
+	comboPointLocation(1)
+	combatTextStyle(0) -- 0 is scroll up, 1 is arc
 	classColorHealthBars()
 	classIconPortraits()
 	resizeArenaFrames(1.5)
@@ -24,17 +30,24 @@ function loadUserProfile()
 	arenaTrinketFrames()
 	hideMacroText()
 	fixFollowingNameplates()
-	--showXPBar(false) -- seems to not work (also only for ppl below max lvl), disregard
+	showXPBar(false) -- seems to not work (also only for ppl below max lvl), disregard
 	snowfall()
 end
 
---[[
-	You can either run the function on login/reload, or call it yourself
-	in a macro using "/run loadUserProfile".
+local eFrame = CreateFrame("Frame")
+--eFrame:RegisterEvent("PLAYER_LOGIN")
+eFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 
-	By default the function is run at login/reload, by placing it below
+eFrame:SetScript("OnEvent",function(self, event, ...)
 
-	Remove the line if you want to run the function yourself through a macro.
-]]
+	--[[
+		You can either run the function on login/reload, or call it yourself
+		in a macro using "/run loadUserProfile".
 
-loadUserProfile()
+		By default the function is run at login/reload, by placing it below
+
+		Remove the line if you want to run the function yourself through a macro.
+	]]
+
+	loadUserProfile()
+end)

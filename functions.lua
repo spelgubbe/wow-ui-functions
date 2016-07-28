@@ -1,3 +1,12 @@
+-- nameplate defaults are about 141x39
+-- /run DAMAGE_TEXT_FONT = "Fonts\\SKURRI.TTF"
+-- test  /run DAMAGE_TEXT_FONT = "Fonts\\FRIZQT__.TTF", 11, "OUTLINE, MONOCHROME"
+-- fix that damage is shown like Arc in Legion -- not cool (should go up)
+-- /run DAMAGE_TEXT_FONT = "Fonts\\SKURRI.TTF" -- seems to be dmg font
+
+-- frame.combatText:SetHeight(1)
+-- frame.combatText:SetWidth(1) -- mer pixlar!
+
 -- FUNCTIONS
 local function functionPrint(str)
 	if SHOW_FUNCTION_MESSAGES then
@@ -5,6 +14,18 @@ local function functionPrint(str)
 	else
 		return
 	end
+end
+
+function setDamageFont(fontLocation)
+	DAMAGE_TEXT_FONT = fontLocation
+end
+
+function setNameplateFont(fontLocation)
+	NAMEPLATE_FONT = fontLocation
+end
+
+function setNameFont(fontLocation)
+	UNIT_NAME_FONT = fontLocation
 end
 
 function resizeArenaFrames(scale)
@@ -346,10 +367,20 @@ function snowfall()
 	functionPrint("Snowfall Keypress is enabled")
 end
 
+-- CVar functions
+
 function fixFollowingNameplates()
 	SetCVar("nameplateOtherTopInset", -1)
 	SetCVar("nameplateOtherBottomInset", -1)
 	functionPrint("Nameplates set to not follow")
+end
+
+function combatTextStyle(number)
+	SetCVar("floatingCombatTextCombatDamageDirectionalScale", number)
+end
+function comboPointLocation(number)
+	SetCVar("comboPointLocation", number) -- old combo point location (otherwise 2)
+	functionPrint("Combo points are being shown "..(number == 1 and "on target frame" or "in the middle of the screen"))
 end
 
 -- END FUNCTIONS
