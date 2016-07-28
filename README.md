@@ -30,4 +30,3 @@ functions:
 	"normalizeBarsWhileCC()": 						No red "cooldown" on your spells when you are in CC
 	"fixFollowingNameplates()":
 	"snowfall()": 									Shows an animation when a buttons are pressed on the actionbars
-}
