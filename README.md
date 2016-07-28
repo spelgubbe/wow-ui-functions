@@ -1,6 +1,7 @@
 # wow-ui-functions
 Great deal of UI manipulating functions (nameplates, actionbars, pvp functions, ...)
 functions:
+
 	"comboPointLocation(number)": 			1: CP are showed above target portrait, 2: CP are showed below your own portrait
 	"combatTextStyle(number)": 			0: Scroll up, 1: ??, 2: ??, 3: Arc
 	"setDamageFont(fontLocation)": 			This font is not only used for damage. Blame Blizzard. fontLocation example: "Fonts\\SKURRI.TTF"
