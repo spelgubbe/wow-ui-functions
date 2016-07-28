@@ -25,7 +25,6 @@ function loadUserProfile()
 	showGryphons(false)
 	showActionBarNumber(false)
 	enableFullscreenGlow(false)
-	showAggroPercentage(true) -- had aggro percentage enabled in mop/wod
 	showXPBar(false) -- only works after UI load (has to be used in a macro), might work in future patches
 	normalizeBarsWhileCC()
 	classIconPortraits()
@@ -39,7 +38,7 @@ end
 
 local eFrame = CreateFrame("Frame")
 --eFrame:RegisterEvent("PLAYER_LOGIN")
-eFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
+eFrame:RegisterEvent("PLAYER_LOGIN")
 
 eFrame:SetScript("OnEvent",function(self, event, ...)
 

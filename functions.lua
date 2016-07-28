@@ -388,9 +388,10 @@ end
 function enableFullscreenGlow(bool)
 	SetCVar("ffxGlow", bool)
 end
-function showAggroPercentage(bool)
+--[[function showAggroPercentage(bool)
+	-- not working
 	SetCVar("threatShowNumeric", bool)
-end
+end]]
 
 -- END FUNCTIONS
 
