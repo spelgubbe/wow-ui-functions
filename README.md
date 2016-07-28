@@ -12,7 +12,6 @@ functions:
 	"resizeSpellBars(player, focus, target)":
 	"moveArenaFrames(position, offsetx, offsety)": 	Position examples: "topright", "bottomleft", "topleft", "bottomright".
 													Offset is how many pixels you want them to be moved from their preset positions in x and y-coordinates.
-	
 	"showActionBarTextures(true/false)":
 	"showMenuBarTextures(true/false)":
 	"showMaxLevelBar(true/false)": 					Show/Hide the replacement for the XP-bar at max level
