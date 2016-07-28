@@ -12,25 +12,28 @@ function loadUserProfile()
 	--setNameFont("directory")
 
 	comboPointLocation(1)
-	combatTextStyle(0) -- 0 is scroll up, 1 is arc
-	classColorHealthBars()
-	classIconPortraits()
+	combatTextStyle(0) -- 0 is scroll up, 3 is arc
 	resizeArenaFrames(1.5)
 	resizeArenaPetFrames(1.5)
+	resizeSpellBars(1.23, 1.4, 1.4)
 	moveArenaFrames("topright", -335, -25)
+	showAllTargetDebuffs(true)
 	showActionBarTextures(false)
 	showMenuBarTextures(false)
 	showMaxLevelBar(false)
 	showBinds(false)
 	showGryphons(false)
-	resizeSpellBars(1.23, 1.4, 1.4)
-	normalizeBarsWhileCC()
 	showActionBarNumber(false)
+	enableFullscreenGlow(false)
+	showAggroPercentage(true) -- had aggro percentage enabled in mop/wod
+	showXPBar(false) -- only works after UI load (has to be used in a macro), might work in future patches
+	normalizeBarsWhileCC()
+	classIconPortraits()
+	classColorHealthBars()
 	classColorNameBackground()
 	arenaTrinketFrames()
 	hideMacroText()
 	fixFollowingNameplates()
-	showXPBar(false) -- seems to not work (also only for ppl below max lvl), disregard
 	snowfall()
 end
 

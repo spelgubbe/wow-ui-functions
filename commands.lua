@@ -1,6 +1,7 @@
 SLASH_COMMAND1 = '/uf'
 local functions = {
-	"combatTextStyle(number) '1: CP are showed above target portrait, 2: CP are showed below your own portrait'"
+	"comboPointLocation(number) '1: CP are showed above target portrait, 2: CP are showed below your own portrait'",
+	"combatTextStyle(number) '0: Scroll up, 1: ??, 2: ??, 3: Arc'",
 	"setDamageFont(fontLocation) 'This font is not only used for damage. Blame Blizzard. fontLocation example: \"Fonts\\SKURRI.TTF\"'",
 	"setNameplateFont(fontLocation) 'Font for names on nameplates'",
 	"setNameFont(fontLocation) 'Font for names on unit portraits'",
@@ -16,6 +17,9 @@ local functions = {
 	"hideMacroText()",
 	"showGryphons(true/false)",
 	"showActionBarNumber(true/false)",
+	"showAllTargetDebuffs(true/false) 'Show all debuffs on target (otherwise you mostly see your own debuffs)'",
+	"enableFullscreenGlow(true/false) 'Fullscreen glow effect'",
+	"showAggroPercentage(true/false) 'Show aggro percentage above unit portraits'",
 	"classIconPortraits() 'Class icons instead of the usual portraits for players'",
 	"classColorHealthBars() 'Class color on target/focus healthbars'",
 	"classColorNameBackground() 'Class color behind the names on the target/focus portraits'",

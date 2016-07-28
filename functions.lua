@@ -382,6 +382,15 @@ function comboPointLocation(number)
 	SetCVar("comboPointLocation", number) -- old combo point location (otherwise 2)
 	functionPrint("Combo points are being shown "..(number == 1 and "on target frame" or "in the middle of the screen"))
 end
+function showAllTargetDebuffs(bool)
+	SetCVar("noBuffDebuffFilterOnTarget", bool)
+end
+function enableFullscreenGlow(bool)
+	SetCVar("ffxGlow", bool)
+end
+function showAggroPercentage(bool)
+	SetCVar("threatShowNumeric", bool)
+end
 
 -- END FUNCTIONS
 
