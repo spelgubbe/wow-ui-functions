@@ -25,7 +25,6 @@ Functions documentation:
 	"showActionBarNumber(true/false)":
 	"showAllTargetDebuffs(true/false)": 			Show all debuffs on target (otherwise you mostly see your own debuffs)
 	"enableFullscreenGlow(true/false)": 			Fullscreen glow effect
-	--"showAggroPercentage(true/false)": 			Show aggro percentage above unit portraits
 	"classIconPortraits()": 						Class icons instead of the usual portraits for players
 	"classColorHealthBars()": 						Class color on target/focus healthbars
 	"classColorNameBackground()": 					Class color behind the names on the target/focus portraits
