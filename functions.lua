@@ -338,31 +338,27 @@ function snowfall()
 	end
 
 	-- didn't run on PLAYER_ENTERING_WORLD
-	--hooksecurefunc('ActionButton_UpdateHotkeys', function(button, buttonType)
 	hooksecurefunc('ActionButton_Update', function(button, actionbuttonType)
-	if InCombatLockdown() then return end -- no animation while in CC
-	if not button.hooked then
-	local id, actionButtonType, key
-	if not actionButtonType then
-	actionButtonType = button:GetAttribute('binding') or string.upper(button:GetName())
-
-	actionButtonType = replace(actionButtonType, 'BOTTOMLEFT', '1')
-	actionButtonType = replace(actionButtonType, 'BOTTOMRIGHT', '2')
-	actionButtonType = replace(actionButtonType, 'RIGHT', '3')
-	actionButtonType = replace(actionButtonType, 'LEFT', '4')
-	actionButtonType = replace(actionButtonType, 'MULTIBAR', 'MULTIACTIONBAR')
-	end
-	local key = GetBindingKey(actionButtonType)
-	if key then
-	button:RegisterForClicks("AnyDown")
-	--SetOverrideBinding(button, true, key, 'CLICK '..button:GetName()..':LeftButton')
-	SetOverrideBindingClick(button, true, key, button:GetName(), "LeftButton")
-	end
-	button.AnimateThis = animate
-	SecureHandlerWrapScript(button, "OnClick", button, [[ control:CallMethod("AnimateThis", self) ]])
-	button.hooked = true
-
-	end
+		if InCombatLockdown() then return end -- can't hook functions in combat
+		if not button.hooked then
+			local actionButtonType, key
+			actionButtonType = button:GetAttribute('binding') or string.upper(button:GetName())
+			--actionButtonType = replace(actionButtonType, 'PETACTION', 'BONUSACTION') -- pet action buttons attempt
+			actionButtonType = replace(actionButtonType, 'BOTTOMLEFT', '1')
+			actionButtonType = replace(actionButtonType, 'BOTTOMRIGHT', '2')
+			actionButtonType = replace(actionButtonType, 'RIGHT', '3')
+			actionButtonType = replace(actionButtonType, 'LEFT', '4')
+			actionButtonType = replace(actionButtonType, 'MULTIBAR', 'MULTIACTIONBAR')
+			local key = GetBindingKey(actionButtonType)
+			if key then
+				button:RegisterForClicks("AnyDown")
+				--SetOverrideBinding(button, true, key, 'CLICK '..button:GetName()..':LeftButton')
+				SetOverrideBindingClick(button, true, key, button:GetName(), "LeftButton")
+			end
+			button.AnimateThis = animate
+			SecureHandlerWrapScript(button, "OnClick", button, [[ control:CallMethod("AnimateThis", self) ]])
+			button.hooked = true
+		end
 	end)
 	functionPrint("Snowfall Keypress is enabled")
 end
