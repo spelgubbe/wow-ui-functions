@@ -33,6 +33,7 @@ function loadUserProfile()
 	arenaTrinketFrames()
 	hideMacroText()
 	fixFollowingNameplates()
+	setNameplateDistance(40)
 	snowfall()
 end
 

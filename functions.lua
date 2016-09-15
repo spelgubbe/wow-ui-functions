@@ -336,9 +336,18 @@ function snowfall()
 		animationNum = (animationNum % animationsCount) + 1
 		return true
 	end
-
+	hooksecurefunc('PetActionButtonDown', function(id)
+		local button
+			if PetActionBarFrame then
+				if id > NUM_PET_ACTION_SLOTS then return end
+				button = _G["PetActionButton"..id]
+				if not button then return end
+			end
+			return
+		animate(button)
+	end)
 	-- didn't run on PLAYER_ENTERING_WORLD
-	hooksecurefunc('ActionButton_Update', function(button, actionbuttonType)
+	hooksecurefunc('ActionButton_Update', function(button)
 		if InCombatLockdown() then return end -- can't hook functions in combat
 		if not button.hooked then
 			local actionButtonType, key
@@ -365,6 +374,8 @@ end
 
 -- CVar functions
 
+-- att fixa ... nameplates hitbox != nameplates width
+
 function fixFollowingNameplates()
 	SetCVar("nameplateOtherTopInset", -1)
 	SetCVar("nameplateOtherBottomInset", -1)
@@ -379,7 +390,10 @@ function comboPointLocation(number)
 	functionPrint("Combo points are being shown "..(number == 1 and "on target frame" or "in the middle of the screen"))
 end
 function showAllTargetDebuffs(bool)
-	SetCVar("noBuffDebuffFilterOnTarget", bool)
+	SetCVar("NoBuffDebuffFilterOnTarget", bool)
+end
+function setNameplateDistance(yards)
+	SetCVar("nameplateMaxDistance", yards)
 end
 function enableFullscreenGlow(bool)
 	SetCVar("ffxGlow", bool)
